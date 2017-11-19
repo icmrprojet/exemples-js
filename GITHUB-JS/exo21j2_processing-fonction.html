@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS Bin</title>
+</head>
+<body>
+<!-- librairie JS des sons des effets.Défini un espace de nom-->
+<script src="p5.js"></script>
+
+<script>
+
+// setup = Une seule fois
+function setup(){
+	createCanvas(750,750);
+	colorMode(HSL,255);
+	CARRE();
+}
+function CARRE(){
+	for (var j=1; j<10; j++){
+		var posix=j*70;
+		lignesColor(posix);
+	}
+}
+function lignesColor(hauteur){
+	for ( var i=0; i<10; i++){
+		var couleur = 255-i/10*255;
+		colorMode(HSL,255);
+		var centre = 50+i*70;
+		fill(couleur,255,100);
+		stroke(255-couleur,255,100);
+		strokeWeight(i);
+		ellipse(centre,hauteur,100); 
+	}
+}
+
+</script>
+</body>
+</html>

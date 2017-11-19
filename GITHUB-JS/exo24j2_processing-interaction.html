@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS Bin</title>
+</head>
+<body>
+<!-- librairie JS des sons des effets.Défini un espace de nom-->
+<script src="p5.js"></script>
+
+<script>
+var n=0;
+var diametre=50;
+
+function setup(){
+	createCanvas(750,750);
+	colorMode(HSL,255);
+}
+function draw(){
+	clear();
+	ellipse(100,100,n);
+	var montexte ="Nous en sommes à la frame" + n;
+	text(montexte,100,100,n);
+	text("n%50=" + n%50 + " et n=" +n,200,200);
+	n++;
+	ellipse(100,100,diametre);
+	// toutes les 50 images, il grandi autant qu'il diminue.
+	// si n%100<25 il grandi pendant 3/4 et diminue pendant 1/4 donc grossi 
+	// (le modulo doit tjs etre supérieur)
+	if (n%50<25){
+		agrandirCercle();
+	} else{
+		reduireCercle();
+	}
+}
+
+function agrandirCercle(){
+	text("GRAND",100,100);
+	diametre+=10;
+}
+function reduireCercle(){
+	text("PETIT",100,100);
+	diametre-=10;
+}
+
+</script>	
+</body>
+</html>

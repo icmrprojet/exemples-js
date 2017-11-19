@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+
+// exemple 2 : verifier que le mot de passe est valide
+      var MOTDEPASSE = "toto";
+      var saisie;
+      
+      for (var i = 0; i < 3; i++) {
+	saisie = prompt("Mot de passe ?", "");
+        switch(saisie) {
+        case MOTDEPASSE: // equivalent a saisie == MOTDEPASSE
+          console.log("connecté");
+          break;
+        case "": case undefined: case null: 
+        // equivalent a saisie == "" OU saisie == undefined OU saisie == null
+          console.log("aucun mot de passe saisi");
+          break;
+        default: // tous les cas non prévus avant
+          console.log("invalide");
+	}
+	// sort de la boucle 'for' si saisie == MOTDEPASSE		  
+	if (saisie == MOTDEPASSE) {
+	  break;
+	}	
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Maison</title>
+</head>
+<body>
+  <script>
+  // exercice 1
+  // créer avec New une instance de l'objet maison
+///////taper en console => romainHome
+///////taper en console => romainHome.fenetres
+///////taper en console => roaminHome.ouvertures()
+
+  //objet , structure , classe
+  function maison(portes, fenetres){
+    this.portes = portes;
+    this.fenetres = fenetres;
+    this.ouvertures = function(){
+      var resultat = this.portes + this.fenetres;
+      return resultat;
+    }
+  }
+  var romainHome = new maison(3,4);  //nouvelle instance
+  </script>
+  
+</body>
+</html>
+
+

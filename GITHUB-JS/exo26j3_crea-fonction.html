@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <head>
+  </head>
+  <body id="page">
+    /* simulation du minimum vital de p5.js */
+    <script>
+      var fr = 60;
+
+      console.log(document);
+      console.log(window);
+      //Toujours tester si chargtpage existe avant et tester des erreurs
+//Solution 1 : en créant une fonction attachée au body 
+               //(code appliqué sur une fonction attachée au body)
+      /*  BAD CODE
+      chargtpage.onload= function(){
+        setup();
+        setInterval(draw, 1000/fr);
+      }
+      var chargtpage = document.getElementById("page");
+      */
+      function initP5(){
+        setup();
+        setIneterval(draw, 1000/fr);
+      }
+
+      document.getElementById("page").onload=initP5;
+      //J'ecrase tout ce qui est dans le onLoad précédant 
+      //Vérifier qu'un autre onload n'a pas été déjà défini par une librairie
+      //si p5 + JQUERY les init des librairies s'écrasent 
+      //sinon on peut faire ajouter avec element.addEventListener
+
+//Solution 2 : en créant une fonction sur l'élément window (code en inline)
+      window.onload= function(){
+        setup();
+        setInterval(draw, 1000/fr);
+      }
+      function framerate(newFramerate) {
+        fr = newFramerate;
+      }
+    </script>
+
+    /* code a nous, utilisant p5.js */
+    <script>
+      function setup() {
+        console.log("setup");
+      }
+      function draw(){
+        console.log("draw");
+      }      
+    </script>
+  </body>
+</html>

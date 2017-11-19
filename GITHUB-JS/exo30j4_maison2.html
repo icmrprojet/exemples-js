@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Maison</title>
+</head>
+<body>
+  <script>
+  // exercice 2
+  // créer une propriété adresse
+  // créer une méthode nommée bonjour() qui ecrit "j'habite à" + adresse
+///////taper en console => a.bonjour puis, a.bonjour()
+  //objet , structure , classe
+  function maison(portes, fenetres, adresse){
+    this.portes = portes;
+    this.fenetres = fenetres;
+    this.adresse= adresse;
+    this.adresses = function(){
+      var resultat = this.portes + this.fenetres;
+      return resultat;
+    }
+    this.bonjour = function(){
+      return "j'habite à " + this.adresse;
+    }
+  }
+  var a = new maison (3,4, "Vincennes");
+  var b = new maison (1,2, "Belleville");
+
+  </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS Bin</title>
+</head>
+<body>
+<!-- librairie JS des sons des effets.Défini un espace de nom-->
+<script src="p5.js"></script>
+
+<script>
+function setup(){
+	createCanvas(750,750);
+	colorMode(HSL,255);
+}
+function draw() {
+	//clear();/*Events dessiner que quand on clique
+	//ellipse(mouseX,mouseY,50);
+	var diametre;
+	if (mouseIsPressed){
+	diametre=50;
+	fill(255);
+	}else{
+	fill(0);
+	diametre=20;
+	}
+	ellipse(mouseX,mouseY,diametre);//par defaut il dessine
+}
+
+</script>
+	
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>test</title>
+  <link rel="stylesheet" type="text/css" href="exo29j4-morpion01.css">
+</head>
+<body>
+	<script>
+		var container = document.createElement("section");
+
+		for (var i=0; i<9 ; i++){
+			var paragraphe = document.createElement("p");
+			paragraphe.id ="param-" +i;
+			//Paragraphe est une instance
+			if (i%2){
+				paragraphe.classList.add("rouge");
+			}else{
+				paragraphe.classList.add("bleu");
+			}
+
+			var texte = document.createTextNode("C" + i);
+			paragraphe.appendChild(texte);
+			container.appendChild(paragraphe);
+		}
+		document.body.appendChild(container);
+	</script>
+
+</body>
+</html>

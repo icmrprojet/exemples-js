@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  
+<script>
+    
+//bien préciser text VARIABLE QUI VA BOUCLER avec i
+function ajouteSection(text, couleur){
+  var section = document.createElement("section");
+  var contenu = document.createTextNode(text);
+  section.appendChild(contenu);
+  document.body.appendChild(section);
+}
+
+for(var i=0;i<10;i++){
+  ajouteSection(i);
+}
+
+</script>
+  
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VOITURES</title>
+</head>
+<body style="color:#000000!important">
+<!-- librairie JS des sons des effets.Défini un espace de nom-->
+<script src="p5.js"></script>
+<script>
+function setup(){
+	createCanvas(600,600);
+	colorMode(HSL,255);
+	mavoiture = new Voiture (10,50,2,"pink");
+	meilleurevoiture = new Voiture (10,130,3,"gold");
+}
+function draw(){
+	clear ();
+	mavoiture.avance();
+	mavoiture.affiche();
+	textSize(30);
+	fill(0, 0, 0);
+	text("meilleurevoiture.positionX = " + meilleurevoiture.positionX,100,250);
+// si on veut appliquer le controle de la position seulement sur une occurence
+	if(mavoiture.positionX > 200){ // pour PROCESSING WIDTH signifie la largeur du CANVAS
+		meilleurevoiture.couleur="red";
+	}else{
+		meilleurevoiture.couleur="gold";
+	}
+// si on veut appliquer le controle de la vitesse seulement sur une occurence
+/////////////////////////////////////// mouseY varie de 0 à height
+/////////////////////////////////////// vitesse doit varier de  1 à 10
+/////////////////////////////////////// mouseY/height sera compris entre 0 et 1 (height/height)
+/////////////////////////////////////// mouseY/height * 10 + 1 = vitesse pour commencer à 1
+	fill("blue");
+	text("posiY de la souris = " + mouseY, 100,300);
+	text("Vitesse de mavoiture = " + mavoiture.vitesse,100,350);
+	//mavoiture.vitesse=mouseY/height*10 +1; /////// ralenti vers le haut
+	mavoiture.vitesse = (height-mouseY)/height *10;
+	meilleurevoiture.avance();
+	meilleurevoiture.affiche();
+}
+
+// création d'une classe toujours avec une majuscule
+///**************************************************
+//////console test01 sur les propriétés
+//*************************************
+//////////////var mavoiture = new Voiture (10,10,110,128) => undefined
+//////////////mavoiture => Object { positionX: 10, positionY: 10, vitesse: 110, couleur: 128 }
+//////console test02 sur les méthodes
+//***********************************
+//////////////var mavoiture = new Voiture (10,10,110,"pink") => undefined
+//////////////mavoiture.affiche()  => undefined // petit rectangle en haut de l'écran
+//***********************************
+/// test03 Ajout d'une instance (new Voiture) dans setup des appels de fonction dans draw
+/// test04 faire que la vitesse d'1 voiture change en fonction de la position Y de la souris
+function Voiture (x,y,v,c){
+	this.positionX = x;
+	this.positionY = y;
+	this.vitesse = v;
+	this.couleur = c;
+	this.affiche = function(){
+		fill(0);	
+		textSize(20);
+		text(this.positionX,this.positionX, this.positionY);
+		fill(this.couleur);
+		rect (this.positionX, this.positionY,100, 50);
+	}
+	this.avance= function(){
+		this.positionX += 1;
+	}
+	this.avance= function(){
+		if (this.positionX<600){  
+		this.positionX += this.vitesse; //  this.positionX = this.positionX + this.vitesse;
+		}else{
+		this.positionX =0;	
+		}
+	}
+}
+var mavoiture;
+</script>
+</body>
+</html>

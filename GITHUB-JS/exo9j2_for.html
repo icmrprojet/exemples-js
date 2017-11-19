@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body> 
+  <p id="paragraphe">Un  petit paragraphe</p>
+
+  <script>
+    var p = document.getElementById("paragraphe");
+    p.style.color = "red";
+    
+    //bien préciser text VARIABLE QUI VA BOUCLER avec i
+    function ajouteSection(text, couleur){
+      var section = document.createElement("section");
+      var contenu = document.createTextNode(text);
+      section.appendChild(contenu);
+      document.body.appendChild(section);
+      section.style.color=couleur;
+    }
+
+  for (var i=0; i<=10; i=i+2)  {
+    ajouteSection("La variable i vaut " + i,"blue");
+    ajouteSection("La variable i vaut " + i, i);
+  }
+
+  </script>
+</body>
+</html>

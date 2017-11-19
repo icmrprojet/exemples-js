@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body id="corps">
+    /* simulation du minimum vital de p5.js */
+    <script>
+      var fr = 60;
+      function framerate(newFramerate) {
+        fr = newFramerate;
+      }
+      function initPart1() {
+        setup();
+      }
+      function initPart2() {
+        setInterval(draw, 1000/fr);
+      }
+      /*
+      prototype de addEvents:
+      parametres:
+        balise: elementHTML sur lequel appliquer l'événement
+        event: nom de l'événement à "écouter"
+        functions: tableau de fonctions à éxécuter (dans l'ordre)
+      retour: pas de retour
+      */
+//BOUCLE IF /////////////////
+      function addEvents(balise, event, functions) {
+        //console.log(functions);
+        for (var i=0; i< functions.length; i++){
+          console.log(i);
+          console.log(functions[i]);
+          balise.addEventListener(event, functions[i]);
+        }
+      }
+      addEvents(window, "load", [initPart1, initPart2]);
+      
+      /* on veut faire ça
+      window.addEventListener("load", initPart1);
+      window.addEventListener("load", initPart2);
+      */
+    </script>
+
+    <script>
+    /* code a nous, utilisant p5.js */
+      function setup() {
+        console.log("setup");
+      }
+      
+      function draw(){
+        console.log("draw");
+      }
+
+      
+    </script>
+  </body>
+</html>

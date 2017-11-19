@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Maison</title>
+</head>
+<body>
+  <script>
+// exercice 3 
+/////////////////creation d'une nouvelle instance
+///////taper en console => var moncalcul = new superCalcul(2,6,78) => undefined
+///////taper en console => moncalcul.nombre1 => 2
+///////taper en console => moncalcul.nombre3 => 78
+///////taper en console => moncalcul.somme() => 86
+///////taper en console => moncalcul.produit() => 936
+/////////////////creation d'une nouvelle instance
+///////taper en console => var lecalcul = new superCalcul(17,34,68) => undefined
+///////taper en console => lecalcul.nombre2 => 34
+  function superCalcul(a,b,c){
+    // definition des propriétés
+    this.nombre1=a;
+    this.nombre2=b;
+    this.nombre3=c;
+    // definition des méthodes
+    this.somme= function(){
+      var resultat = this.nombre1 + this.nombre2 + this.nombre3;
+      return resultat;
+    }
+    this.produit= function(){
+      var resultat = this.nombre1 * this.nombre2 * this.nombre3;
+      return resultat;
+    }
+  }
+  </script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body id="corps">
+    /* simulation du minimum vital de p5.js */
+    <script>
+      var fr = 60;
+      function framerate(newFramerate) {
+        fr = newFramerate;
+      }
+
+      function initPart1() {
+        setup();
+      }
+      
+      function initPart2() {
+        setInterval(draw, 1000/fr);
+      }
+
+      window.addEventListener("load", initPart1);
+      window.addEventListener("load", initPart2);
+//utilisation de addEventListener qui est une fonction
+
+//utilisation de onload qui est une propriété 
+      //window.onload=initPart1;
+      /:window.onload=initPart2;
+
+
+    </script>
+
+    /* code a nous, utilisant p5.js */
+    <script>
+      function setup() {
+        console.log("setup");
+      }
+      
+      function draw(){
+        console.log("draw");
+      }
+
+      
+    </script>
+  </body>
+</html>

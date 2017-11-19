@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body> 
+  <p id="paragraphe">Un  petit paragraphe</p>
+  
+  <script>
+    var p = document.getElementById("paragraphe");
+    p.style.color = "red";
+    
+    //bien préciser text VARIABLE QUI VA BOUCLER avec i
+    function ajouteSection(text, couleur){
+      var section = document.createElement("section");
+      var contenu = document.createTextNode(text);
+      section.appendChild(contenu);
+      document.body.appendChild(section);
+      section.style.color=couleur;
+
+    }
+
+// a est un tableau, length récupère la longueur du tableau pour i strictement <
+var a=["blue","pink","red", "purple"];
+    for (var i=0; i<1000; i++)  {
+      ajouteSection("La variable i vaut " + i, a[i%4]);
+}
+
+  </script>
+</body>
+</html>

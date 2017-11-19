@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Koala</title>
+  <link rel="stylesheet" type="text/css" href="exo31j4_koala.css">
+</head>
+<body>
+	<div id="Koala1">Koala 1</div>
+	<div id="Koala2">Koala 2</div>
+
+	<script>
+		var k1 = document.getElementById("Koala1");
+		var k2 = document.getElementById("Koala2");
+
+		k1.className= "rouge GRAS"; // créé ou remplasse la balise class
+		k2.classList= "jaune";  // Ajoute une propriété à la fin de la liste
+
+
+		k1.classList.add("FIN"); // Ajoute une propriété à la fin de la liste
+
+
+		k1.classList.remove("GRAS"); // Supprime une propriété de class
+		k1.className= "rouge"; // remplasse toutes propriétés de la class
+		k2.classList.add("FIN"); // Ajoute une propriété à la fin de la liste
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS Bin</title>
+</head>
+<body>
+<!-- librairie JS des sons des effets.Défini un espace de nom-->
+<script src="p5.js"></script>
+
+<script>
+// Draw = 60 fois par seconde
+/*function draw(){
+ellipse(500,350,100);
+}
+*/
+// setup = Une seule fois
+function setup(){
+	createCanvas(750,750);
+	CARRE();
+}
+function CARRE(){
+	for (var j=1; j<10; j++){
+		var posix=j*70;
+		lignesColor(posix);
+	}
+}
+function lignesColor(hauteur){
+	for ( var i=0; i<10; i++){
+		var centre = 50+i*70;
+		fill(i/10*255);
+		stroke(0,255-10*i,255-10*i);
+		strokeWeight(10);
+		ellipse(centre,hauteur,50); 
+	}
+}
+
+</script>	
+</body>
+</html>

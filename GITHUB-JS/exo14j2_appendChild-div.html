@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style>
+    div{ border:1px solid black;width:30px;height:30px;display:inline-block;}
+</style>
+</head>
+<body> 
+  
+<script>
+
+//bien préciser VARIABLE QUI VA BOUCLER avec i
+  function createDiv(couleur){
+    var div = document.createElement("div");/*on créé div*/
+    document.body.appendChild(div);/*on ajoute div dans ma page*/
+    div.style.backgroundColor = couleur;
+    }
+
+var couleurs=["#ff00ff","blue","red", "rgba(200,200,100,.5)"] ;
+
+//rempli toutes les div de manière aléatoire
+for (var i=0; i<1000; i++)  {
+  var quellecouleur = Math.floor(Math.random()*couleurs.length);
+  createDiv(couleurs[quellecouleur]);
+}
+
+</script>
+</body>
+</html>

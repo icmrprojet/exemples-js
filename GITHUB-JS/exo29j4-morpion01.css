@@ -1,0 +1,36 @@
+body{
+	background: #000000;
+}
+section{
+	/* border:1px solid red;*/
+	background: #000000;
+	width:80vh;
+	height:80vh;
+	text-align: center;
+	padding:10px;
+	margin:0 auto;
+	margin-top:4%;
+	font-size:0;
+}
+p {
+	border:1px solid black;
+	background: rgba(255,255,255,0.2);
+	box-sizing:border-box;
+	font-size:30px;
+	color:#000;
+	display:inline-block;
+	width:30%;
+	height:30%;
+	padding:10% 5%;
+	margin:0;
+	border:20px inset #999999;
+}
+.rouge{
+	background-color: red;
+}
+.bleu{
+	background-color: blue;	
+}
+.GRAS{
+	font-weight: bold;
+}

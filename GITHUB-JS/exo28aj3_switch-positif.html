@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      // exemple 1: signe d'un chiffre qui vaut 0 ou 1 ou -1
+      var entier = Math.round(Math.random() * 2 - 1);
+      console.log(entier);
+
+      // version avec des if/else imbriqués
+      if (entier == 1) {
+        console.log("positif (if/else)");
+      } else {
+        if (entier == 0) {
+          console.log("nul (if/else)");
+        } else {
+          console.log("negatif (if/else)");
+        }
+      }
+
+      // version avec un switch/case
+      switch(entier) {
+      case 1: // equivalent a entier == 1
+        console.log("positif (switch)");
+        break;
+      case 0: // equivalent a entier == 0
+        console.log("nul (switch)");
+        break;
+      default: // tous les cas non avant
+        console.log("negatif (switch)");
+      }
+
+    </script>
+  </body>
+</html>

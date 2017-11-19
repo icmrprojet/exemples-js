@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BULLES</title>
+</head>
+<body style="color:#000000!important">
+<!-- librairie JS des sons des effets.Défini un espace de nom-->
+<script src="p5.js"></script>
+
+<script>
+//////////////creation objet bulle x, y varie => 3 Propriétés /// .hauteur .vitesse .taille
+//////////////methode1 qui la fait monter => evolue()
+//////////////methode2 qui l'affiche  => affiche()
+/////////////Ajout d'un tableau pour générer de multiples bulles
+function Bulle(hauteur,x,c,v,s){
+	this.positionX=x;
+	this.positionY=height - hauteur; //hauteur de mon écran -Y
+	this.couleur=c;
+	this.vitesse=v;
+	this.taille=s;
+	this.affiche = function(){
+		fill(this.couleur);
+		ellipse(this.positionX, this.positionY, this.taille);
+	};
+	this.evolue = function(){
+		this.positionY -= this.vitesse;
+	}
+}
+var mabulle;
+var mesbulles =[];
+
+function setup(){
+	createCanvas(600,600);
+	colorMode(HSL,255);
+	initBulles();
+	mabulle= new Bulle(0, width/2, "blue", 2, 50);
+}
+function draw(){
+	clear ();
+	mabulle.evolue();
+	mabulle.affiche();
+	var n =100;
+	for (var i=0; i<n; i++){
+		mesbulles[i].evolue();
+		mesbulles[i].affiche();
+	}
+}
+function initBulles(){
+	var n =100; 
+	for (var i=0; i<n; i++){
+		/// rappel :Bulle(hauteur,x,c,v,s)
+		/// 0 est la height - hauteur 
+		mesbulles[i]= new Bulle(0 ,Math.random()*500,"cyan",Math.random(),Math.random()*10);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+	
+</body>
+</html>
